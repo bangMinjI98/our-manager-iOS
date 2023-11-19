@@ -15,10 +15,15 @@ class staffMainView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLayout()
+        setStyle()
     }
     
     private func setLayout() {
-        view.backgroundColor = UIColor(red: 0.949, green: 0.906, blue: 0.757, alpha: 0.8)
+        view.backgroundColor = .backColor
+    }
+    
+    private func setStyle() {
+        
     }
 
 }

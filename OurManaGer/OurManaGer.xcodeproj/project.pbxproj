@@ -17,6 +17,10 @@
 		E5985FCA2B06504400E74D18 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E5985FC92B06504400E74D18 /* SnapKit */; };
 		E5985FCC2B06504400E74D18 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = E5985FCB2B06504400E74D18 /* SnapKit-Dynamic */; };
 		E5985FCE2B06506B00E74D18 /* staffMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5985FCD2B06506B00E74D18 /* staffMainView.swift */; };
+		E5D1CAEB2B0A17C300C50722 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1CAEA2B0A17C300C50722 /* Color.swift */; };
+		E5D1CAEE2B0A198C00C50722 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1CAED2B0A198C00C50722 /* UIFont+.swift */; };
+		E5D1CAF02B0A19A300C50722 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1CAEF2B0A19A300C50722 /* UIView+.swift */; };
+		E5D1CAF22B0A19B400C50722 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1CAF12B0A19B400C50722 /* UIStackView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		E5985FB12B064D9600E74D18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5985FC32B064FC900E74D18 /* staffLogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = staffLogInView.swift; sourceTree = "<group>"; };
 		E5985FCD2B06506B00E74D18 /* staffMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = staffMainView.swift; sourceTree = "<group>"; };
+		E5D1CAEA2B0A17C300C50722 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		E5D1CAED2B0A198C00C50722 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		E5D1CAEF2B0A19A300C50722 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		E5D1CAF12B0A19B400C50722 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 		E5985FA22B064D9200E74D18 /* OurManaGer */ = {
 			isa = PBXGroup;
 			children = (
+				E5D1CAE82B0A179F00C50722 /* Global */,
 				E5985FB82B064EB700E74D18 /* Owner */,
 				E5985FB72B064EB100E74D18 /* Staff */,
 				E5985FA32B064D9200E74D18 /* AppDelegate.swift */,
@@ -172,6 +181,33 @@
 			path = Notice;
 			sourceTree = "<group>";
 		};
+		E5D1CAE82B0A179F00C50722 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				E5D1CAEC2B0A197700C50722 /* Extensions */,
+				E5D1CAE92B0A17AD00C50722 /* Resources */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		E5D1CAE92B0A17AD00C50722 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E5D1CAEA2B0A17C300C50722 /* Color.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E5D1CAEC2B0A197700C50722 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E5D1CAED2B0A198C00C50722 /* UIFont+.swift */,
+				E5D1CAEF2B0A19A300C50722 /* UIView+.swift */,
+				E5D1CAF12B0A19B400C50722 /* UIStackView+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -254,8 +290,12 @@
 				E5985FCE2B06506B00E74D18 /* staffMainView.swift in Sources */,
 				E5985FA82B064D9200E74D18 /* ViewController.swift in Sources */,
 				E5985FA42B064D9200E74D18 /* AppDelegate.swift in Sources */,
+				E5D1CAEE2B0A198C00C50722 /* UIFont+.swift in Sources */,
+				E5D1CAF02B0A19A300C50722 /* UIView+.swift in Sources */,
 				E5985FA62B064D9200E74D18 /* SceneDelegate.swift in Sources */,
 				E5985FC42B064FC900E74D18 /* staffLogInView.swift in Sources */,
+				E5D1CAF22B0A19B400C50722 /* UIStackView+.swift in Sources */,
+				E5D1CAEB2B0A17C300C50722 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
