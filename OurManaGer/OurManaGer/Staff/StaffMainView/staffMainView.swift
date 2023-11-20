@@ -22,7 +22,7 @@ class staffMainView: UIViewController {
     
     private func setLayout() {
         self.view.backgroundColor = .backColor
-        view.addSubViews(logo, welcomeTitle, dayList)
+        view.addSubViews(logo, welcomeTitle, dayList, startWork, goHome, statusLabel)
         logo.snp.makeConstraints {
             $0.top.equalTo(view.snp.top).offset(65)
             $0.leading.equalTo(view.snp.leading).offset(20)
@@ -38,6 +38,21 @@ class staffMainView: UIViewController {
         dayList.snp.makeConstraints {
             $0.top.equalTo(welcomeTitle.snp.bottom).offset(30)
             $0.leading.trailing.equalToSuperview().inset(20)
+        }
+        
+        startWork.snp.makeConstraints {
+            $0.top.equalTo(dayList.snp.bottom).offset(40)
+            $0.leading.equalTo(view.snp.leading).offset(100)
+        }
+        
+        goHome.snp.makeConstraints {
+            $0.top.equalTo(dayList.snp.bottom).offset(40)
+            $0.leading.equalTo(startWork.snp.trailing).offset(100)
+        }
+        
+        statusLabel.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(startWork.snp.bottom).offset(40)
         }
         
     }
@@ -69,23 +84,57 @@ class staffMainView: UIViewController {
             dayList.addArrangedSubview(button)
         }
     }
+    
+    @objc private func buttonTapped(sender: UIButton) {
+        if sender == startWork {
+            print("Start Work 버튼이 눌렸습니다.")
+            // startWork 버튼이 눌렸을 때 수행할 동작을 추가
+            statusLabel.text = "콩지 님이 근무중입니다!"
+        } else if sender == goHome {
+            print("Go Home 버튼이 눌렸습니다.")
+            // goHome 버튼이 눌렸을 때 수행할 동작을 추가
+            statusLabel.text = "출근하셨나요? 출근 기록을 잊지마세요 : )"
+        }
+    }
+    
+    
+private var dayList = UIStackView().then {
+    $0.axis = .horizontal
+    $0.spacing = 2
+    $0.distribution = .fillEqually
 }
 
-    
-    private var dayList = UIStackView().then {
-        $0.axis = .horizontal
-        $0.spacing = 2
-        $0.distribution = .fillEqually
-    }
-    
-    private var logo = UIImageView().then {
-        $0.image = UIImage(named: "staffCharacter")
-        $0.contentMode = .scaleAspectFit
-    }
-    
-    private var welcomeTitle = UILabel().then {
-        $0.text = "HI 🙌🏻  BangCong!"
-        $0.textColor = .black
-        $0.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-    }
+private var logo = UIImageView().then {
+    $0.image = UIImage(named: "staffCharacter")
+    $0.contentMode = .scaleAspectFit
+}
+
+private var welcomeTitle = UILabel().then {
+    $0.text = "HI 🙌🏻  콩지!"
+    $0.textColor = .black
+    $0.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+}
+
+private var startWork = UIButton().then {
+    let image = UIImage(named: "startWork")
+    $0.setImage(image, for: .normal)
+    $0.imageView?.contentMode = .scaleAspectFit
+    $0.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
+}
+
+private var goHome = UIButton().then {
+    let image = UIImage(named: "goHome")
+    $0.setImage(image, for: .normal)
+    $0.imageView?.contentMode = .scaleAspectFit
+    $0.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
+}
+
+private var statusLabel = UILabel().then {
+    $0.text = "출근하셨나요?  출근 기록을 잊지마세요 : )"
+    $0.textColor = .black
+    $0.font = UIFont.systemFont(ofSize: 11)
+}
+
+}
+
 
