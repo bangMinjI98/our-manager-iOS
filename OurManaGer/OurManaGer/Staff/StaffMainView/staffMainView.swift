@@ -123,6 +123,45 @@ class staffMainView: UIViewController {
         }
     }
     
+//    @objc private func imageButtonTapped(sender: UITapGestureRecognizer) {
+//        guard let tappedButton = sender.view as? UIButton else {
+//            return
+//        }
+//
+//        if tappedButton == toDo {
+//            navigateToToDoPage()
+//        } else if tappedButton == recipe {
+//            navigateToRecipePage()
+//        } else if tappedButton == order {
+//            navigateToOrderPage()
+//        } else if tappedButton == schedule {
+//            navigateToSchedulePage()
+//        }
+//    }
+//    
+//    private func addTapGestureToImageView(imageView: UIImageView) {
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageButtonTapped(sender:)))
+//    }
+//
+//    private func navigateToToDoPage() {
+//        let toDoViewController = ToDoViewController()
+//        self.navigationController?.pushViewController(toDoViewController, animated: true)
+//    }
+//    
+//    private func navigateToRecipePage() {
+//        let recipeController = RecipeViewController()
+//        self.navigationController?.pushViewController(recipeController, animated: true)
+//    }
+//    
+//    private func navigateToOrderPage() {
+//        let orderController = OrderViewController()
+//        self.navigationController?.pushViewController(orderController, animated: true)
+//    }
+//
+//    private func navigateToSchedulePage() {
+//        let scheduleController = ScheduleViewController()
+//        self.navigationController?.pushViewController(scheduleController, animated: true)
+//    }
     
     private var dayList = UIStackView().then {
         $0.axis = .horizontal
@@ -166,6 +205,7 @@ class staffMainView: UIViewController {
         $0.contentMode = .scaleAspectFit
         $0.isUserInteractionEnabled = true
     }
+    
     
     private var recipe = UIImageView().then {
         $0.image = UIImage(named: "recipe")
