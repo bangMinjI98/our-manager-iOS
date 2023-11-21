@@ -21,6 +21,10 @@
 		E5D1CAEE2B0A198C00C50722 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1CAED2B0A198C00C50722 /* UIFont+.swift */; };
 		E5D1CAF02B0A19A300C50722 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1CAEF2B0A19A300C50722 /* UIView+.swift */; };
 		E5D1CAF22B0A19B400C50722 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1CAF12B0A19B400C50722 /* UIStackView+.swift */; };
+		E5D1CB052B0D081900C50722 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1CB042B0D081900C50722 /* ToDoViewController.swift */; };
+		E5D1CB072B0D082A00C50722 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1CB062B0D082A00C50722 /* RecipeViewController.swift */; };
+		E5D1CB092B0D083C00C50722 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1CB082B0D083C00C50722 /* OrderViewController.swift */; };
+		E5D1CB0B2B0D084E00C50722 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D1CB0A2B0D084E00C50722 /* ScheduleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,10 @@
 		E5D1CAED2B0A198C00C50722 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		E5D1CAEF2B0A19A300C50722 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		E5D1CAF12B0A19B400C50722 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		E5D1CB042B0D081900C50722 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		E5D1CB062B0D082A00C50722 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		E5D1CB082B0D083C00C50722 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		E5D1CB0A2B0D084E00C50722 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +136,7 @@
 		E5985FBB2B064EEC00E74D18 /* CheckToDo */ = {
 			isa = PBXGroup;
 			children = (
+				E5D1CB042B0D081900C50722 /* ToDoViewController.swift */,
 			);
 			path = CheckToDo;
 			sourceTree = "<group>";
@@ -135,6 +144,7 @@
 		E5985FBC2B064EFA00E74D18 /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
+				E5D1CB062B0D082A00C50722 /* RecipeViewController.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -142,6 +152,7 @@
 		E5985FBD2B064F0500E74D18 /* OrderList */ = {
 			isa = PBXGroup;
 			children = (
+				E5D1CB082B0D083C00C50722 /* OrderViewController.swift */,
 			);
 			path = OrderList;
 			sourceTree = "<group>";
@@ -149,6 +160,7 @@
 		E5985FBE2B064F1400E74D18 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				E5D1CB0A2B0D084E00C50722 /* ScheduleViewController.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -287,15 +299,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5D1CB0B2B0D084E00C50722 /* ScheduleViewController.swift in Sources */,
+				E5D1CB052B0D081900C50722 /* ToDoViewController.swift in Sources */,
 				E5985FCE2B06506B00E74D18 /* staffMainView.swift in Sources */,
 				E5985FA82B064D9200E74D18 /* ViewController.swift in Sources */,
 				E5985FA42B064D9200E74D18 /* AppDelegate.swift in Sources */,
 				E5D1CAEE2B0A198C00C50722 /* UIFont+.swift in Sources */,
+				E5D1CB072B0D082A00C50722 /* RecipeViewController.swift in Sources */,
 				E5D1CAF02B0A19A300C50722 /* UIView+.swift in Sources */,
 				E5985FA62B064D9200E74D18 /* SceneDelegate.swift in Sources */,
 				E5985FC42B064FC900E74D18 /* staffLogInView.swift in Sources */,
 				E5D1CAF22B0A19B400C50722 /* UIStackView+.swift in Sources */,
 				E5D1CAEB2B0A17C300C50722 /* Color.swift in Sources */,
+				E5D1CB092B0D083C00C50722 /* OrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
