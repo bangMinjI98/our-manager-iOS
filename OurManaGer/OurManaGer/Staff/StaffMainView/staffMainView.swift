@@ -17,17 +17,15 @@ class staffMainView: UIViewController {
         addImageButtonsToStackView()
         setLayout()
         setUpScrollView()
-        
     }
     
     private func setLayout() {
         self.view.backgroundColor = .backColor
-        view.addSubViews(logo, welcomeTitle, dayList, startWork, goHome, statusLabel)
+        view.addSubViews(logo, welcomeTitle, dayList, startWork, goHome, statusLabel, toDo, recipe, order, schedule, staffToggle)
         logo.snp.makeConstraints {
             $0.top.equalTo(view.snp.top).offset(65)
             $0.leading.equalTo(view.snp.leading).offset(20)
-            $0.width.equalTo(60)
-            $0.height.equalTo(60)
+            $0.width.height.equalTo(60)
         }
         
         welcomeTitle.snp.makeConstraints {
@@ -55,6 +53,36 @@ class staffMainView: UIViewController {
             $0.top.equalTo(startWork.snp.bottom).offset(40)
         }
         
+        toDo.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(statusLabel.snp.bottom).offset(40)
+            $0.width.equalTo(340)
+            $0.height.equalTo(170)
+        }
+        
+        recipe.snp.makeConstraints {
+            $0.leading.equalTo(view.snp.leading).offset(20)
+            $0.top.equalTo(toDo.snp.bottom).offset(50)
+            $0.width.height.equalTo(100)
+        }
+        
+        order.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(toDo.snp.bottom).offset(50)
+            $0.width.height.equalTo(100)
+        }
+        
+        schedule.snp.makeConstraints {
+            $0.trailing.equalTo(view.snp.trailing).offset(-20)
+            $0.top.equalTo(toDo.snp.bottom).offset(50)
+            $0.width.height.equalTo(100)
+        }
+        
+        staffToggle.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(order.snp.bottom).offset(40)
+            $0.width.height.equalTo(60)
+        }
     }
     
     
@@ -74,13 +102,13 @@ class staffMainView: UIViewController {
         
         for imageName in imageNames {
             let button = UIButton().then {
-                        $0.setImage(UIImage(named: imageName), for: .normal)
-                        $0.imageView?.contentMode = .scaleAspectFit
-                        $0.contentHorizontalAlignment = .fill
-                        $0.contentVerticalAlignment = .fill
-                        $0.widthAnchor.constraint(equalToConstant: 30).isActive = true
-                        $0.heightAnchor.constraint(equalToConstant: 50).isActive = true
-                    }
+                $0.setImage(UIImage(named: imageName), for: .normal)
+                $0.imageView?.contentMode = .scaleAspectFit
+                $0.contentHorizontalAlignment = .fill
+                $0.contentVerticalAlignment = .fill
+                $0.widthAnchor.constraint(equalToConstant: 30).isActive = true
+                $0.heightAnchor.constraint(equalToConstant: 50).isActive = true
+            }
             dayList.addArrangedSubview(button)
         }
     }
@@ -88,53 +116,79 @@ class staffMainView: UIViewController {
     @objc private func buttonTapped(sender: UIButton) {
         if sender == startWork {
             print("Start Work 버튼이 눌렸습니다.")
-            // startWork 버튼이 눌렸을 때 수행할 동작을 추가
             statusLabel.text = "콩지 님이 근무중입니다!"
         } else if sender == goHome {
             print("Go Home 버튼이 눌렸습니다.")
-            // goHome 버튼이 눌렸을 때 수행할 동작을 추가
             statusLabel.text = "출근하셨나요? 출근 기록을 잊지마세요 : )"
         }
     }
     
     
-private var dayList = UIStackView().then {
-    $0.axis = .horizontal
-    $0.spacing = 2
-    $0.distribution = .fillEqually
+    private var dayList = UIStackView().then {
+        $0.axis = .horizontal
+        $0.spacing = 2
+        $0.distribution = .fillEqually
+    }
+    
+    private var logo = UIImageView().then {
+        $0.image = UIImage(named: "staffCharacter")
+        $0.contentMode = .scaleAspectFit
+    }
+    
+    private var welcomeTitle = UILabel().then {
+        $0.text = "HI 🙌🏻  콩지!"
+        $0.textColor = .black
+        $0.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+    }
+    
+    private var startWork = UIButton().then {
+        let image = UIImage(named: "startWork")
+        $0.setImage(image, for: .normal)
+        $0.imageView?.contentMode = .scaleAspectFit
+        $0.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
+    }
+    
+    private var goHome = UIButton().then {
+        let image = UIImage(named: "goHome")
+        $0.setImage(image, for: .normal)
+        $0.imageView?.contentMode = .scaleAspectFit
+        $0.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
+    }
+    
+    private var statusLabel = UILabel().then {
+        $0.text = "출근하셨나요?  출근 기록을 잊지마세요 : )"
+        $0.textColor = .black
+        $0.font = UIFont.systemFont(ofSize: 11)
+    }
+    
+    private var toDo = UIImageView().then {
+        $0.image = UIImage(named: "todo_list")
+        $0.contentMode = .scaleAspectFit
+        $0.isUserInteractionEnabled = true
+    }
+    
+    private var recipe = UIImageView().then {
+        $0.image = UIImage(named: "recipe")
+        $0.contentMode = .scaleAspectFit
+        $0.isUserInteractionEnabled = true
+    }
+    
+    private var order = UIImageView().then {
+        $0.image = UIImage(named: "order")
+        $0.contentMode = .scaleAspectFit
+        $0.isUserInteractionEnabled = true
+    }
+    
+    private var schedule = UIImageView().then {
+        $0.image = UIImage(named: "schedule")
+        $0.contentMode = .scaleAspectFit
+        $0.isUserInteractionEnabled = true
+    }
+    
+    private var staffToggle = UIImageView().then {
+        $0.image = UIImage(named: "staffToggle")
+        $0.contentMode = .scaleAspectFit
+        $0.isUserInteractionEnabled = true
+    }
+    
 }
-
-private var logo = UIImageView().then {
-    $0.image = UIImage(named: "staffCharacter")
-    $0.contentMode = .scaleAspectFit
-}
-
-private var welcomeTitle = UILabel().then {
-    $0.text = "HI 🙌🏻  콩지!"
-    $0.textColor = .black
-    $0.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-}
-
-private var startWork = UIButton().then {
-    let image = UIImage(named: "startWork")
-    $0.setImage(image, for: .normal)
-    $0.imageView?.contentMode = .scaleAspectFit
-    $0.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
-}
-
-private var goHome = UIButton().then {
-    let image = UIImage(named: "goHome")
-    $0.setImage(image, for: .normal)
-    $0.imageView?.contentMode = .scaleAspectFit
-    $0.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
-}
-
-private var statusLabel = UILabel().then {
-    $0.text = "출근하셨나요?  출근 기록을 잊지마세요 : )"
-    $0.textColor = .black
-    $0.font = UIFont.systemFont(ofSize: 11)
-}
-
-}
-
-
